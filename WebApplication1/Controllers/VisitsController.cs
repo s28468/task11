@@ -25,7 +25,7 @@ public class VisitsController : ControllerBase
         catch (Exception e)
         {
             var errorResponse = new ErrorResponse
-            { Message = "Error when you trying to get visit.",
+            { Message = "Error when you trying to get visit. ",
                 Details = e.Message };
 
             return StatusCode(StatusCodes.Status500InternalServerError, errorResponse);
@@ -46,14 +46,14 @@ public class VisitsController : ControllerBase
             var visit = await _context.Visits.FindAsync(id);
 
             if (visit == null)
-            { return NotFound(new { message = $"Was not found visit with id: ", id }); }
+            { return NotFound(new { message = "Was not found visit with id: ", id }); }
 
             return Ok(visit);
         }
         catch (Exception e)
         {
             var errorResponse = new ErrorResponse
-            { Message = "Error when you trying to get visit.",
+            { Message = " Error when you trying to get visit.",
                 Details = e.Message };
 
             return StatusCode(StatusCodes.Status500InternalServerError, errorResponse);
@@ -75,7 +75,7 @@ public class VisitsController : ControllerBase
         {
             var errorResponse = new ErrorResponse
             {
-                Message = "Error when you trying to add visit",
+                Message = "Error when you trying to add visit ",
                 Details = e.Message
             };
 
@@ -120,7 +120,7 @@ public class VisitsController : ControllerBase
         {
             var errorResponse = new ErrorResponse
             {
-                Message = "Error occurred while updating visit.",
+                Message = "Error when you trying to updating visit.",
                 Details = e.Message
             };
 
@@ -154,7 +154,7 @@ public class VisitsController : ControllerBase
         {
             var errorResponse = new ErrorResponse
             {
-                Message = "Error occurred while updating visit.",
+                Message = "Error when you trying to delete visit.",
                 Details = e.Message
             };
 

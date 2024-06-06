@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
             {
                 
                 if (orderBy is not "Name" or "Description")
-                { return BadRequest("Change your orderBy parameter. You can write only 'Name' or 'Description'"); }
+                { return BadRequest("Change your orderBy parameter, you can write only 'Name' or 'Description'"); }
 
                 var animals = await context.Animals
                     .Include(a => a.AnimalType)
